@@ -1,7 +1,7 @@
 % usages:
 % extractFeatures("data/S001/S001", 4, true)
 % after extraction:
-% doClassification('featureVectors.txt', 'referenceClass.txt', {1, 1}, 10, 50, 0);
+% doClassification('featureVectors.txt', 'referenceClass.txt', {1, 0}, 10, 50, 0);
 
 function extractFeatures(data_path, starting_record, includeAR)
     record = [];
@@ -52,7 +52,7 @@ function extractFeatures(data_path, starting_record, includeAR)
     lvt1 = cell(size(t1s));
     lvt2 = cell(size(t2s));
 
-    p = 8;
+    p = 2;
 
     for i = 1:numel(t1s)
         cst = W * cell2mat(t1s(i));
