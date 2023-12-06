@@ -3,3 +3,4 @@ cd wfdbtoolbox/
 cd mcode
 addpath(pwd)
 savepath
+cd ../..
