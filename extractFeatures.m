@@ -57,7 +57,7 @@ function extractFeatures(data_path, starting_record, includeAR)
     for i = 1:numel(t1s)
         cst = W * cell2mat(t1s(i));
         cse = [cst(1, :).', cst(size(cst, 1), :).'].';
-        csf = filter(b, 1, cse);
+        csf = filter(b, 1, cse.').';
 
         if includeAR
             AR_features = [];
@@ -75,7 +75,7 @@ function extractFeatures(data_path, starting_record, includeAR)
     for i = 1:numel(t2s)
         cst = W * cell2mat(t2s(i));
         cse = [cst(1, :).', cst(size(cst, 1), :).'].';
-        csf = filter(b, 1, cse);
+        csf = filter(b, 1, cse.').';
 
         if includeAR
             AR_features = [];
